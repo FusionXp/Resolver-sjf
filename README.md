@@ -17,7 +17,21 @@ Programa de consola en Java que resuelve ejercicios de planificación de proceso
 ## Requisitos
 
 - Windows
-- Java (sirve el que trae Eclipse; `Abrir_SJF.bat` lo busca solo)
+- **Java (OpenJDK)** instalado en el PC
+
+### Cómo instalar Java (OpenJDK)
+
+1. Entra a la página de descarga de OpenJDK (Eclipse Temurin):
+   👉 **https://adoptium.net/temurin/releases/?os=windows&arch=x64&package=jdk**
+2. Descarga el archivo **`.msi`** de la versión más reciente (LTS).
+3. Ábrelo y dale **Siguiente** hasta terminar. Deja marcada la opción **"Add to PATH"**.
+4. Para comprobarlo, abre la consola (`cmd`) y escribe:
+   ```
+   java -version
+   ```
+   Si aparece la versión, ya está listo.
+
+> Si ya tienes Eclipse instalado, puede que no necesites instalar nada: `Abrir_SJF.bat` busca solo el Java que trae Eclipse.
 
 ## Cómo usarlo
 
