@@ -1,0 +1,89 @@
+==============================================
+           RESOLVER SJF - LEEME
+==============================================
+
+DESCRIPCION
+-----------
+Programa de consola hecho en Java que resuelve ejercicios
+de planificacion de procesos con el algoritmo SJF
+(Shortest Job First / Trabajo mas corto primero) en sus
+dos versiones:
+
+  1. SJF no apropiativo: cuando un proceso empieza, corre
+     completo hasta terminar.
+  2. SJF apropiativo (SRTF): si llega un proceso con menos
+     tiempo restante, le quita la CPU al que esta corriendo.
+
+
+ARCHIVOS
+--------
+  SJF.jar          -> el programa
+  Abrir_SJF.bat    -> abre el programa con doble clic
+  LEEME.txt        -> este archivo
+  OpenJDK          -> instalar antes de realizar el programa
+
+
+REQUISITOS
+----------
+  - Windows
+  - Java (sirve el que trae Eclipse, el de Oracle o
+    cualquier otro). El archivo Abrir_SJF.bat lo busca solo.
+
+
+COMO USARLO
+-----------
+  1. Descomprime el zip en una carpeta
+     (clic derecho -> Extraer todo).
+  2. Doble clic en Abrir_SJF.bat
+  3. Elige una opcion del menu:
+        1 = SJF no apropiativo
+        2 = SJF apropiativo (SRTF)
+        3 = Salir
+  4. Escribe cuantos procesos hay.
+  5. Para cada proceso escribe su tiempo de llegada y
+     su rafaga (tiempo de CPU que necesita).
+
+
+QUE MUESTRA
+-----------
+  - Diagrama de Gantt en una linea, por ejemplo:
+        0 | P1 2 | P2 4 | P3 5 | P2 7 | P4 11 | P1 16
+    Los numeros son los tiempos y "--" significa que la
+    CPU estuvo libre.
+  - Tabla con: Proceso, Llegada, Rafaga, Fin, Retorno
+    y Espera de cada proceso.
+  - Tiempo promedio de retorno y tiempo promedio de espera.
+
+
+FORMULAS USADAS
+---------------
+  Retorno = Fin - Llegada
+  Espera  = Retorno - Rafaga
+
+
+EJEMPLO DE PRUEBA
+-----------------
+  Proceso   Llegada   Rafaga
+  P1        0         7
+  P2        2         4
+  P3        4         1
+  P4        5         4
+
+  Resultado no apropiativo:
+    Gantt: 0 | P1 7 | P3 8 | P2 12 | P4 16
+    Espera promedio: 4.0   Retorno promedio: 8.0
+
+  Resultado apropiativo:
+    Gantt: 0 | P1 2 | P2 4 | P3 5 | P2 7 | P4 11 | P1 16
+    Espera promedio: 3.0   Retorno promedio: 7.0
+
+
+NOTAS
+-----
+  - Si dos procesos tienen la misma rafaga, se elige el
+    que esta primero en la lista.
+  - Solo se aceptan numeros enteros.
+  - No abras el programa desde dentro del zip, primero
+    descomprimelo.
+  - Si sale "No se encontro Java", instala Java y vuelve
+    a abrir Abrir_SJF.bat.
